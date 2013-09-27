@@ -1,12 +1,10 @@
 import std.stdio;
 
-alias temp_t;
-
 struct Props{
 	String name;
 	ushort size;
-	temp_t min;
-	temp_t max;
+	auto min;
+	auto max;
 } all_props;
 
 void main() {
@@ -15,11 +13,10 @@ void main() {
 }
 
 Props get_props(char type) {
-	temp_t= type;
-	all_props.name= temp_t.stringof;
-	all_props.size= temp_t.size;
-	all_props.min= temp_t.min;
-	all_props.max= temp_t.max;
+	all_props.name= type.stringof;
+	all_props.size= type.size;
+	all_props.min= type.min;
+	all_props.max= type.max;
 }
 
 void print_props() {
